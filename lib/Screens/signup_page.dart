@@ -139,7 +139,7 @@ class _SignupPageState extends State<SignupPage>{
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12), 
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 15,top: 7, bottom: 7 ),
@@ -154,7 +154,7 @@ class _SignupPageState extends State<SignupPage>{
                                 onPressed: _togglePasswordVisiblity,
                                 ),
                               hintText: "Password",
-                              border: InputBorder.none
+                              border: InputBorder.none 
                             ),
                           ),
                         ),
