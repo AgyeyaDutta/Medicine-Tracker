@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: Color.fromARGB(223, 255, 154, 238),
       appBar: AppBar(
       actions: [
-        IconButton(onPressed: signOut , 
+        IconButton(onPressed: signOut ,   
         icon: Icon(Icons.logout),
         tooltip: 'signOut',)
       ],

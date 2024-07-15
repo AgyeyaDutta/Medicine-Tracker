@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -46,16 +47,17 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAIqihvol6iS0WbPlupPgejDEzkXwoYob4',
+  static FirebaseOptions android = FirebaseOptions(
+    apiKey: '${dotenv.env['APIKEYAND']}',
+    //apiKey: 'AIzaSyAIqihvol6iS0WbPlupPgejDEzkXwoYob4',
     appId: '1:411110404175:android:dee335a3262803f7363a3a',
     messagingSenderId: '411110404175',
     projectId: 'medication-reminder-8332c',
     storageBucket: 'medication-reminder-8332c.appspot.com',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD8Fr-wS6FhYUFV4VlmvEr3muhz3kG0Axk',
+  static FirebaseOptions ios = FirebaseOptions(
+    apiKey: "${dotenv.env["APIKEYIOS"]}",
     appId: '1:411110404175:ios:a5ae361a86e64970363a3a',
     messagingSenderId: '411110404175',
     projectId: 'medication-reminder-8332c',
@@ -63,8 +65,8 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.medicationReminder',
   );
 
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCOBJaLSH8QGNp8U3322LoybrjR2K_xjwA',
+  static FirebaseOptions windows = FirebaseOptions(
+    apiKey: "${dotenv.env["APIKEYWEB"]}",
     appId: '1:411110404175:web:ba4aad935644bfb6363a3a',
     messagingSenderId: '411110404175',
     projectId: 'medication-reminder-8332c',
