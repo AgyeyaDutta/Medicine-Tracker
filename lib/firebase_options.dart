@@ -49,7 +49,6 @@ class DefaultFirebaseOptions {
 
   static FirebaseOptions android = FirebaseOptions(
     apiKey: '${dotenv.env['APIKEYAND']}',
-    //apiKey: 'AIzaSyAIqihvol6iS0WbPlupPgejDEzkXwoYob4',
     appId: '1:411110404175:android:dee335a3262803f7363a3a',
     messagingSenderId: '411110404175',
     projectId: 'medication-reminder-8332c',
