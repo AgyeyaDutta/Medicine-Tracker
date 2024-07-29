@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
+
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
 /// Example:
@@ -48,7 +49,7 @@ class DefaultFirebaseOptions {
   }
 
   static FirebaseOptions android = FirebaseOptions(
-    apiKey: '${dotenv.env['APIKEYAND']}',
+    apiKey: "${dotenv.env["APIKEYAND"]}",
     appId: '1:411110404175:android:dee335a3262803f7363a3a',
     messagingSenderId: '411110404175',
     projectId: 'medication-reminder-8332c',
