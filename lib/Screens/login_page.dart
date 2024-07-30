@@ -1,7 +1,6 @@
 
 // ignore_for_file: prefer_const_constructors, use_build_context_synchronously
 
-//import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +8,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:medication_reminder/Screens/home_page.dart';
-//import 'package:medication_reminder/Screens/login_page.dart';
 import 'package:medication_reminder/Screens/signup_page.dart';
-//import 'package:medication_reminder/Services/signup_services.dart';
+
 import 'dart:async';
 
 

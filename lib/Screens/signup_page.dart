@@ -23,10 +23,21 @@ class _SignupPageState extends State<SignupPage>{
   Get.to(()=> (LoginPage()));
   }
   Future signUp() async{
-  showDialog(context: context, builder: (context){
+   var userName = userNameController.text.trim();
+   var userEmail = userEmailController.text.trim();
+   var userPassword = userPasswordController.text.trim();
+
+   
+   try {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: userEmail , password: userPassword).then((value)=>{
+      signUpUser(userName, userEmail, userPassword,)});
+      await redirect(); 
+
+      showDialog(context: context, builder: (context){
     return AlertDialog(
-      title: Text("Welcome aboard"),
-      content: Text('Please make sure you used the correct format for your email'),
+      title: Text("Welcome aboard!!!"),
+      content: Text('Please LogIn '),
       actions: [
         TextButton(onPressed: (){
         Navigator.of(context).pop();
@@ -37,18 +48,20 @@ class _SignupPageState extends State<SignupPage>{
     
   },
   );
-   var userName = userNameController.text.trim();
-   var userEmail = userEmailController.text.trim();
-   var userPassword = userPasswordController.text.trim();
-   try {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: userEmail , password: userPassword).then((value)=>{
-      signUpUser(userName, userEmail, userPassword,)});
-      await redirect(); }
+
+
+      // ScaffoldMessenger.of(context).showSnackBar(
+      //   SnackBar(content: Text('Patient data added successfully!')),
+      // );
+      }
+      
     catch (e){
-      rethrow;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to SignUP, enter the correct format')),
+      );
     }
   }
+
   //text controllers
 
   TextEditingController userNameController = TextEditingController();
@@ -153,7 +166,7 @@ class _SignupPageState extends State<SignupPage>{
                                  Icons.visibility_off,),
                                 onPressed: _togglePasswordVisiblity,
                                 ),
-                              hintText: "Password",
+                              hintText: "Password, atleast 7 characters",
                               border: InputBorder.none 
                             ),
                           ),

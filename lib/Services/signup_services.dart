@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:medication_reminder/Screens/login_page.dart';
 
 
+//signup users
 
 signUpUser(
   String userName,
@@ -28,3 +29,12 @@ try{
   throw ('Error $e');
 }
 } 
+
+
+//logout users
+
+signOut() async {
+    await FirebaseAuth.instance.signOut();
+    Get.offAll(() => LoginPage());
+  }
+
