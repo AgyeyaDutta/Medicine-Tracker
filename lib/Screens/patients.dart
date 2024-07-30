@@ -16,7 +16,7 @@ class _PatientPageState extends State<PatientPage>{
 @override
   Widget build(BuildContext context){
     return  Scaffold(
-        body: Container(
+          body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: [Color.fromARGB(255, 240, 50, 113), Colors.purple],
             begin: Alignment.center,

@@ -66,11 +66,20 @@ List<Widget> _screens = [
     });
   }
 
+  //  Future<bool> _onWillPop() async {
+  //   // Prevent navigating back
+  //   return false;
+  // }
+  
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    // return WillPopScope(
+    //   onWillPop: _onWillPop,
+    //   child:Scaffold(
+    return Scaffold(
       appBar: AppBar(
+      automaticallyImplyLeading: false,
       actions: [
         IconButton(onPressed: signOut ,   
         icon: Icon(Icons.logout),
@@ -168,31 +177,8 @@ List<Widget> _screens = [
         Icon(Icons.person_3),],
       onTap: _onItemTapped,
       ),
+    
       
-      //  bottomNavigationBar: BottomNavigationBar(
-      //   items: const <BottomNavigationBarItem>[
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.home),
-      //       label: 'Home',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.people_sharp),
-      //       label: 'Patients',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(Icons.person_pin_rounded),
-      //       label: 'Profile',
-      //     ),
-      //   ],
-      //   currentIndex: _selectedIndex,
-      //   onTap: _onItemTapped,
-      // ),
-      
-
-
-
-
-
     );
   }
 }

@@ -23,7 +23,7 @@ try{
           'userId': userid.uid,
           }).then((value)=>{
             FirebaseAuth.instance.signOut(),
-            Get.to(()=>LoginPage()),
+            Get.offAll(()=>LoginPage()),
             });
 }  on FirebaseAuthException catch(e){
   throw ('Error $e');

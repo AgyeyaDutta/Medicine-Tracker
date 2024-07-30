@@ -20,7 +20,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage>{
 
   Future redirect() async{
-  Get.to(()=> (LoginPage()));
+  Get.offAll(()=> (LoginPage()));
   }
   Future signUp() async{
    var userName = userNameController.text.trim();
@@ -80,7 +80,7 @@ class _SignupPageState extends State<SignupPage>{
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Color.fromARGB(223, 255, 154, 238),
       body: SafeArea(
         child: Center(
@@ -218,6 +218,7 @@ class _SignupPageState extends State<SignupPage>{
                         SizedBox(width: 5,),
                         GestureDetector(
                           onTap: redirect,
+                         // (){Get.offAll(()=> LoginPage());},
                           child: Text('Log in',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -234,10 +235,6 @@ class _SignupPageState extends State<SignupPage>{
             ),
           ),
       )
-
-
-
-
     );
   }
 }

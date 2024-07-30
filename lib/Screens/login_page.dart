@@ -23,7 +23,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
 
   Future redirect() async{
-  Get.to(()=> (SignupPage()));
+  Get.offAll(()=> (SignupPage()));
   }
   //text controller
   final _userEmailController = TextEditingController();
@@ -39,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
         email: _userEmailController.text.trim(),
          password: _userPasswordController.text.trim());
          Navigator.of(context).pop();
-         Get.to(()=> HomePage());
+         Get.offAll(()=> HomePage());
          } on FirebaseAuthException {
           Navigator.of(context).pop();
           _showErrorDialog();
@@ -76,7 +76,6 @@ class _LoginPageState extends State<LoginPage> {
       
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -211,8 +210,6 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
       )
-
-
     );
   }
 }
